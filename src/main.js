@@ -16,12 +16,13 @@ window.axios = axios;
 
 Vue.use(Notifications)
 
+
 Vue.use(VueAxios, axios);
 
-Vue.use(api);
+Vue.axios.defaults.baseURL = process.env.VUE_APP_API_URL;
 
-Vue.axios.defaults.baseURL = 'http://localhost/api/v2';
-// window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
+Vue.use(api);
 
 
 Vue.prototype.auth = new Auth(store);
