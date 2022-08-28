@@ -17,7 +17,7 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-	document.title = to.meta.title + ' - Admin EasyTour'
+	document.title = to.meta.title + ' - Admin panel'
 
 	if(to.matched.some(record => record.meta.all)) {
 		next()

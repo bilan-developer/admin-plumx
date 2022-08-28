@@ -1,12 +1,12 @@
 export default [
 	{
-		path: '',
+		path: 'admin',
 		name: 'main',
 		meta: { requiresAuth: true, title: 'Главная'},
 		component: () => import('@/pages/main/index')
 	},
 	{
-		path: '/entity/:entity',
+		path: '/admin/entity/:entity',
 		meta: { requiresAuth: true},
 		component: {
 			render: h => h('router-view')

@@ -32,13 +32,13 @@ export default {
     data() {
         return {
             items: [
-                {icon: 'mdi-alpha-r-box-outline', title:'Rules', route:'/entity/rules'},
-                {icon: 'mdi-alpha-r-box', title:'Rules Boxes', route:'/entity/rule-boxes'},
-                {icon: 'mdi-account-box-multiple', title:'Partners', route:'/entity/partners'},
-                {icon: 'mdi-file-multiple', title:'Leads', route:'/entity/leads'},
-                {icon: 'mdi-rocket', title:'Conversions', route:'/entity/conversions'},
-                {icon: 'mdi-account-multiple', title:'Users', route:'/entity/users'},
-                {icon: 'mdi-history', title:'Affiliate Histories', route:'/entity/affiliate-histories'},
+                {icon: 'mdi-alpha-r-box-outline', title:'Rules', route:'/admin/entity/rules'},
+                {icon: 'mdi-alpha-r-box', title:'Rules Boxes', route:'/admin/entity/rule-boxes'},
+                {icon: 'mdi-account-box-multiple', title:'Partners', route:'/admin/entity/partners'},
+                {icon: 'mdi-file-multiple', title:'Leads', route:'/admin/entity/leads'},
+                {icon: 'mdi-rocket', title:'Conversions', route:'/admin/entity/conversions'},
+                {icon: 'mdi-account-multiple', title:'Users', route:'/admin/entity/users'},
+                {icon: 'mdi-history', title:'Affiliate Histories', route:'/admin/entity/affiliate-histories'},
             ],
         };
     },
