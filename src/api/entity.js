@@ -1,8 +1,8 @@
 import axios from 'axios'
 
 export default {
-    get(entity) {
-        return axios.get(`/admin/${entity}`)
+    get(entity, params) {
+        return axios.get(`/admin/${entity}`, {params: params})
     },
     show(entity, id) {
         return axios.get(`/admin/${entity}/${id}`)

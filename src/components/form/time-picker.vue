@@ -60,8 +60,6 @@ export default {
   },
   watch:{
     time: function (val){
-      console.log(111, val);
-
       this.$emit('input', val);
     }
   },

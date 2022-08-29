@@ -1,4 +1,4 @@
-import {emailRules, jsonRule, jsonRuleOrNull, requiredRules} from '@/helpers/validate-rules';
+import {emailRules, jsonRuleOrNull, requiredRules} from '@/helpers/validate-rules';
 
 export default {
     rules: {
@@ -21,12 +21,12 @@ export default {
             {text: 'Days', value: 'rule_days'},
         ],
         fields: [
-            {name: 'name', label: 'Name', type: 'string', rule: [], cols: 3},
-            {name: 'rule_date_from', label: 'Date From', type: 'time-picker', rule: [], cols: 3},
-            {name: 'rule_date_to', label: 'Date To', type: 'time-picker', rule: [], cols: 3},
-            {name: 'rule_affiliate_network', label: 'Affiliate Network', type: 'string', rule: [], cols: 3},
-            {name: 'rule_country', label: 'Country', type: 'textarea', rule: jsonRule, cols: 3}, //JSOn
-            {name: 'rule_days', label: 'Days', type: 'textarea', rule: jsonRule, cols: 3}, //JSOn
+            {name: 'name', label: 'Name', type: 'string'},
+            {name: 'rule_date_from', label: 'Date From', type: 'time-picker'},
+            {name: 'rule_date_to', label: 'Date To', type: 'time-picker'},
+            {name: 'rule_affiliate_network', label: 'Affiliate Network', type: 'string'},
+            {name: 'rule_country', label: 'Country', type: 'country-select', cols:6},
+            {name: 'rule_days', label: 'Days', type: 'day-select', cols:6},
         ],
     },
     'rule-boxes': {
@@ -50,12 +50,11 @@ export default {
         ],
         fields: [
             {name: 'rule_affiliate_network', label: 'Affiliate Network', type: 'string', rule: requiredRules, cols: 3}, //JSOn
-            {name: 'rule_country', label: 'Country', type: 'textarea', rule: jsonRule, cols: 3}, //JSOn
-            {name: 'rule_language', label: 'Language', type: 'textarea', rule: jsonRule, cols: 3}, //JSOn
-            {name: 'rule_offerName', label: 'Offer Name', type: 'string', rule: requiredRules, cols: 3},
+            {name: 'rule_offerName', label: 'Offer Name', type: 'string'},
             {name: 'rule_box', label: 'Rule Box', type: 'number', rule: requiredRules, cols: 3},
             {name: 'workspace', label: 'Workspace', type: 'number', rule: requiredRules, cols: 3},
-
+            {name: 'rule_country', label: 'Country', type: 'country-select', cols:6},
+            {name: 'rule_language', label: 'Language', type: 'language-select', cols:6},
         ],
     },
     partners: {
@@ -85,6 +84,10 @@ export default {
     },
     leads: {
         title: 'Leads',
+        serverRender: true,
+        filter: [
+            {text: 'Workspace', value: 'workspace', width: "150px"},
+        ],
         model: {
             first_name: null,
             last_name: null,
@@ -138,7 +141,6 @@ export default {
             {name: 'platform', label: 'Platform', type: 'string'},
             {name: 'password', label: 'Password', type: 'string', rule: requiredRules},
             {name: 'browser', label: 'Browser', type: 'string'},
-            {name: 'partner', label: 'Partner', type: 'textarea'},
             {name: 'clickId', label: 'Click ID', type: 'string', rule: requiredRules},
             {name: 'campaign_id', label: 'Campaign id', type: 'string'},
             {name: 'offerName', label: 'offer name', type: 'string', rule: requiredRules},
@@ -148,15 +150,18 @@ export default {
             {name: 'traffic_source', label: 'Traffic Source', type: 'string', rule: requiredRules},
             {name: 'traffic_source_account', label: 'Traffic Source Account', type: 'string', rule: requiredRules},
             {name: 'traffic_source_account_creative', label: 'Traffic Source Creative', type: 'string', rule: requiredRules},
-            {name: 'description', label: 'Description', type: 'textarea'},
             {name: 'write_base', label: 'Write base', type: 'string'},
-            {name: 'date', label: 'Date', type: 'datetime', rule: requiredRules},
             {name: 'type', label: 'Type', type: 'string', rule: requiredRules},
             {name: 'workspace', label: 'Workspace', type: 'number', rule: requiredRules},
+            {name: 'date', label: 'Date', type: 'datetime', rule: requiredRules},
+            {name: 'partner', label: 'Partner', type: 'textarea'},
+            {name: 'description', label: 'Description', type: 'textarea'},
+
         ],
     },
     conversions: {
         title: 'Conversions',
+        serverRender: true,
         model: {
             affiliate_network: null,
             type: null,
@@ -214,6 +219,7 @@ export default {
     },
     'affiliate-histories': {
         title: 'Affiliate history',
+        serverRender: true,
         model: {
             lead_click_id: null,
             lead_status: null,

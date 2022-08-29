@@ -34,6 +34,28 @@
                     :label="field.label"
                     v-if="field.type === 'textarea'"
                 ></v-textarea>
+
+                <country-select
+                    v-model="item[field.name]"
+                    :label="field.label"
+                    v-if="field.type === 'country-select'"
+                ></country-select>
+
+                <day-select
+                    v-model="item[field.name]"
+                    :label="field.label"
+                    v-if="field.type === 'day-select'"
+                ></day-select>
+                <language-select
+                    v-model="item[field.name]"
+                    :label="field.label"
+                    v-if="field.type === 'language-select'"
+                ></language-select>
+                <datetime-picker
+                    v-model="item[field.name]"
+                    :label="field.label"
+                    v-if="field.type === 'datetime'"
+                ></datetime-picker>
               </v-col>
             </v-row>
           </v-container>
@@ -57,12 +79,20 @@
 <script>
 
 import crud from '@/directory/crud';
-import TimePicker from '@/pages/entity/time-picker';
+import TimePicker from '@/components/form/time-picker';
+import DatetimePicker from '@/components/form/datetime-picker';
+import CountrySelect from '@/components/form/country-select';
+import DaySelect from '@/components/form/day-select';
+import LanguageSelect from '@/components/form/language-select';
 
 export default {
   name: "entity-form",
   components: {
+    DatetimePicker,
     TimePicker,
+    CountrySelect,
+    DaySelect,
+    LanguageSelect
   },
   data: () => ({
     loading: false,

@@ -9,15 +9,14 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import api from '@/api';
 import "@/plugins/index";
-
+import DatetimePicker from 'vuetify-datetime-picker'
 
 window.axios = axios;
 
 
 Vue.use(Notifications)
-
-
 Vue.use(VueAxios, axios);
+Vue.use(DatetimePicker)
 
 Vue.axios.defaults.baseURL = process.env.VUE_APP_API_URL;
 
