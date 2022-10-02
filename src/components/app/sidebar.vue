@@ -37,6 +37,7 @@ export default {
                 {icon: 'mdi-account-box-multiple', title:'Partners', route:'/admin/entity/partners'},
                 {icon: 'mdi-file-multiple', title:'Leads', route:'/admin/entity/leads'},
                 {icon: 'mdi-rocket', title:'Conversions', route:'/admin/entity/conversions'},
+                {icon: 'mdi-account-multiple', title:'Roles', route:'/admin/entity/roles'},
                 {icon: 'mdi-account-multiple', title:'Users', route:'/admin/entity/users'},
                 {icon: 'mdi-history', title:'Affiliate Histories', route:'/admin/entity/affiliate-histories'},
             ],

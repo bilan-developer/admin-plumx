@@ -41,6 +41,18 @@
                     v-if="field.type === 'country-select'"
                 ></country-select>
 
+                <permission-select
+                    v-model="item[field.name]"
+                    :label="field.label"
+                    v-if="field.type === 'permission-select'"
+                ></permission-select>
+
+                <role-select
+                    v-model="item[field.name]"
+                    :label="field.label"
+                    v-if="field.type === 'role-select'"
+                ></role-select>
+
                 <day-select
                     v-model="item[field.name]"
                     :label="field.label"
@@ -82,6 +94,8 @@ import crud from '@/directory/crud';
 import TimePicker from '@/components/form/time-picker';
 import DatetimePicker from '@/components/form/datetime-picker';
 import CountrySelect from '@/components/form/country-select';
+import PermissionSelect from '@/components/form/permission-select';
+import RoleSelect from '@/components/form/role-select';
 import DaySelect from '@/components/form/day-select';
 import LanguageSelect from '@/components/form/language-select';
 
@@ -91,6 +105,8 @@ export default {
     DatetimePicker,
     TimePicker,
     CountrySelect,
+    PermissionSelect,
+    RoleSelect,
     DaySelect,
     LanguageSelect
   },

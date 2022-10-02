@@ -200,13 +200,12 @@ export default {
             team: '[]',
             allTeam: '[]',
             status: null,
+            roles: [],
         },
         headers: [
             {text: 'Login', value: 'login'},
             {text: 'Email', value: 'email'},
-            {text: 'Team', value: 'team'},
-            {text: 'All Team', value: 'allTeam'},
-            {text: 'Status', value: 'status'},
+            {text: 'Roles', value: 'roles'},
         ],
         fields: [
             {name: 'login', label: 'Login', type: 'string', rule: requiredRules},
@@ -214,7 +213,7 @@ export default {
             {name: 'email', label: 'Email type', type: 'string', rule: emailRules},
             {name: 'team', label: 'Team', type: 'textarea', rule: jsonRuleOrNull},
             {name: 'allTeam', label: 'All Team', type: 'textarea', rule: jsonRuleOrNull},
-            {name: 'status', label: 'Status', type: 'string', rule: requiredRules},
+            {name: 'roles', label: 'Roles', type: 'role-select'},
         ],
     },
     'affiliate-histories': {
@@ -269,4 +268,20 @@ export default {
             {name: 'datetime', label: 'Date', type: 'datetime', rule: requiredRules},
         ],
     },
+    roles: {
+        title: 'Roles',
+        model: {
+            name: null,
+            permissions: null,
+        },
+        headers: [
+            {text: 'ID', value: 'id'},
+            {text: 'Name', value: 'name'}
+        ],
+        fields: [
+            {name: 'name', label: 'Name', type: 'string', rule: requiredRules},
+            {name: 'permissions', label: 'Permissions', type: 'permission-select',  cols:9},
+        ],
+    },
+
 }
